@@ -8,7 +8,7 @@ router
 .post(productController.createProduct)
 router
 .route("/:id")
-.get(productController.getAllProuducts)
+.get(productController.getAProduct)
 .delete("/:id",productController.deleteProduct)
 
 module.export = router ;

@@ -24,29 +24,24 @@ async function deleteProduct (req, res)  {
       res.status(500).json({ message: 'error' });
     }
   } ;
-  function createProduct (req,res){
-    const newItem = new products(req.body) ;
-    const saved= newItem.save()
-    .then((savedProduct)=>{
-      res.status(209).json({
-        message: "saved",
-        savedProduct: savedProduct
-      })
-    })
-    
-    .catch((err)=>{
-      res.status(409).json({
-        message: 'error'
-      })
-    })
 
+async function createProduct(req, res){
+  try{
+    const newProduct = await products.create(req.body)
+
+    res.status(202).json({message:'successful',
+      data: newProduct
+    })
   }
-
-
+catch(err){
+res.status(300).json({
+  message: 'error'})}
+}
   
 
   module.exports= {
     getAllProuducts:getAllProuducts,
     deleteProduct:deleteProduct,
-    createProduct: this.createProduct
+    createProduct:createProduct 
+   
   }
