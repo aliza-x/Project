@@ -1,4 +1,4 @@
-const mongoose = require("../view/server")
+const mongoose = require("mongoose")
 
 const productSchema = new mongoose.Schema({
     name:{
@@ -6,7 +6,7 @@ const productSchema = new mongoose.Schema({
          required: true
     },
     price:{
-        type: double ,
+        type: Number ,
         required: true
     }
 })

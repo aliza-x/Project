@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const routerr= require('../routes/productRoutes')
+const routerr= require('./routes/productRoutes')
 const DB= 'mongodb+srv://aliza1:aliza10@cluster0.swz2d9z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 const app = express();
